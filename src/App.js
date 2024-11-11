@@ -34,7 +34,7 @@ function App() {
     try {
       setIsFiltering(true);
       setLoading(true);
-      const response = await fetch(`http://localhost:4000/getAllCourses?search=${search}`);
+      const response = await fetch(`https://select-elect.vercel.app/getAllCourses?search=${search}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
