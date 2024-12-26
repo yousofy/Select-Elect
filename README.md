@@ -28,5 +28,5 @@ SelectElect is your trusted companion for finding the right electives, empowerin
 
 ## How to Use
 1. Open a terminal and navigate to the folder that contains all the SelectElect files.
-2. Type `npm start` and press Enter.
-3. SelectElect will be fully operational and ready for use!
+2. Type `npm install` and press Enter.
+3. Type `npm start` and press Enter.
