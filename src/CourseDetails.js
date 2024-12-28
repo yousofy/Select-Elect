@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import axios from 'axios';
 import './CourseDetails.css'; // Ensure you have the appropriate CSS for styling
 
 const CourseDetails = () => {
@@ -28,12 +27,12 @@ const CourseDetails = () => {
           `https://ubcgrades.com/api/v3/grades/UBCV/2022S/${dept}/${course}`
         ];
 
-        const responses = await Promise.all(urls.map(url => axios.get(url).catch(err => null)));
+        const responses = await Promise.all(urls.map(url => fetch(url).then(res => res.ok ? res.json() : null)));
 
         const stats = responses
-          .filter(response => response && response.data)
+          .filter(response => response)
           .map(response => {
-            const overallSection = response.data.find(section => section.section === 'OVERALL');
+            const overallSection = response.find(section => section.section === 'OVERALL');
             if (overallSection) {
               return {
                 yearSession: `${overallSection.year}${overallSection.session}`,
