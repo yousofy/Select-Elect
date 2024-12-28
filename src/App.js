@@ -35,12 +35,16 @@ function App() {
     try {
       setIsFiltering(true);
       setLoading(true);
-      const response = await fetch(`${API_URL}/getAllCourses?search=${search}`);
+      const response = await fetch(`${API_URL}/getAllCourses`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const data = await response.json();
-      setCourses(data);
+      const allCourses = await response.json();
+      const filteredCourses = allCourses.filter(course => 
+        course.name.toLowerCase().includes(search.toLowerCase()) || 
+        (course.desc && course.desc.toLowerCase().includes(search.toLowerCase()))
+      );
+      setCourses(filteredCourses);
     } catch (error) {
       console.error('Error fetching courses:', error);
     } finally {
