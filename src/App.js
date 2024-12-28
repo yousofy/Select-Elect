@@ -14,6 +14,12 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [courseDepts, setCourseDepts] = useState([]);
+  const [courseNumbers, setCourseNumbers] = useState([]);
+  const [selectedDeptFilters, setSelectedDeptFilters] = useState([]);
+  const [selectedNumberFilters, setSelectedNumberFilters] = useState([]);
+  const [showDeptDropdown, setShowDeptDropdown] = useState(false);
+  const [showNumberDropdown, setShowNumberDropdown] = useState(false);
 
   useEffect(() => {
     // Populate unique department names based on fetched courses
@@ -43,6 +49,27 @@ function App() {
     }
   };
 
+  const handleDeptFilterChange = (dept) => {
+    setSelectedDeptFilters((prevFilters) =>
+      prevFilters.includes(dept)
+        ? prevFilters.filter(filter => filter !== dept)
+        : [...prevFilters, dept]
+    );
+  };
+
+  const handleNumberFilterChange = (number) => {
+    setSelectedNumberFilters((prevFilters) =>
+      prevFilters.includes(number)
+        ? prevFilters.filter(filter => filter !== number)
+        : [...prevFilters, number]
+    );
+  };
+
+  const filteredCourses = courses.filter(course =>
+    (selectedDeptFilters.length === 0 || selectedDeptFilters.includes(course.dept)) &&
+    (selectedNumberFilters.length === 0 || selectedNumberFilters.includes(course.code.split(' ')[1][0]))
+  );
+
   return (
     <div className="App">
       <h1>Welcome to SelectElect</h1>
@@ -57,7 +84,65 @@ function App() {
           <CiSearch style={{ cursor: 'pointer' }} className='search-icon' />
         </a>
       </div>
-      {/* Other components */}
+
+      <div className="filter-container">
+        <p>Filter By:</p>
+
+        <div className="dropdown">
+          <div className="dropdown-box">
+            <button onClick={() => setShowDeptDropdown(!showDeptDropdown)}>
+              <span>Department</span>
+              <IoMdArrowDropdown className='dropdown-icon' />
+            </button>
+          </div>
+          {showDeptDropdown && (
+            <div className="dropdown-content">
+              {courseDepts.map((dept) => (
+                <label key={dept}>
+                  <input
+                    type="checkbox"
+                    value={dept}
+                    onChange={() => handleDeptFilterChange(dept)}
+                    checked={selectedDeptFilters.includes(dept)}
+                  />
+                  {dept}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown">
+          <div className="dropdown-box">
+            <button onClick={() => setShowNumberDropdown(!showNumberDropdown)}>
+              <span>Course Number</span>
+              <IoMdArrowDropdown className='dropdown-icon' />
+            </button>
+          </div>
+          {showNumberDropdown && (
+            <div className="dropdown-content">
+              {courseNumbers.map((number) => (
+                <label key={number}>
+                  <input
+                    type="checkbox"
+                    value={number}
+                    onChange={() => handleNumberFilterChange(number)}
+                    checked={selectedNumberFilters.includes(number)}
+                  />
+                  {number}xx
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {loading && <div className="loading-container">
+        <p className='loading-text'>Currently Searching For Your Courses</p>
+        <TbTruckLoading className='loading-icon' />
+      </div>}
+
+      {!loading && !isFiltering && <CardManager courses={filteredCourses} />}
     </div>
   );
 }
