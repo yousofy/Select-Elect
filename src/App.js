@@ -7,7 +7,7 @@ import CardManager from './CardManager';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CourseDetails from './CourseDetails';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+const API_URL = process.env.REACT_APP_API_URL || 'https://ubcexplorer.io';
 
 function App() {
   const [search, setSearch] = useState('');
