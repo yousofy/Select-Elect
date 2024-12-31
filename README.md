@@ -1,32 +1,38 @@
-# SelectElect: Your Elective Decision Companion
+# SelectElect: Your Elective Selection Companion
 
 ## Overview
-SelectElect is designed to support students facing the challenge of choosing electives from an overwhelming number of available courses. With countless faculties and departments offering diverse options, students often find it difficult to identify classes that align with their interests and academic needs.
+SelectElect is the ultimate tool for students to navigate the overwhelming world of elective courses, making it easier than ever to tailor their education to their passions and academic goals. By streamlining the elective selection process, SelectElect empowers students to discover courses that resonate with their interests and academic requirements.
 
 ## Problem Statement
-Selecting suitable electives is a daunting task due to the sheer volume and variety of courses across various departments. The current process often requires extensive manual searches and comparisons, which can be both time-consuming and frustrating. Students need a streamlined way to discover courses that resonate with their personal interests and fit within their academic constraints.
+Choosing suitable electives can be overwhelming due to the sheer volume and variety of courses offered across different faculties and departments. The current process often requires extensive manual searches and comparisons, which can be time-consuming and frustrating. Students need an efficient way to discover courses that align with their personal interests and academic goals.
 
 ## Solution
 SelectElect simplifies the elective selection process by allowing students to search for courses using keywords related to their interests. The app then provides options to filter these results by:
-- **Applicable Faculties**: Users can narrow down their results to specific faculties that offer the courses matching their search.
-- **Year Level**: Users can filter courses to match their current academic year, ensuring relevance to their educational progress.
-- **Course Analytics**: Students can click into individual course tabs to view analytics such as past year averages, providing valuable insights into course performance.
+- **Relevant Faculties**: Users can narrow down results to specific faculties offering courses that match their search.
+- **Year Level**: Students can find courses appropriate for their academic year, ensuring they meet curriculum requirements.
+- **Course Analytics**: Detailed insights, such as past grade distributions and enrollment trends, are available to help students make informed decisions.
 
 ## Key Features
-- **Interest-Based Keyword Search**: Students can input keywords that reflect their academic and personal interests to find courses that are most aligned with them.
-- **Faculties Filter**: Users can customize their search results to include or exclude specific faculties.
-- **Year Level Filtering**: The app helps students find courses appropriate for their year, making sure that they do not select courses outside their academic level.
-- **Course Analytics**: Each course tab provides analytics from past years, including averages, to help students make data-informed decisions.
-- **Curated Course List**: SelectElect provides a refined list of courses that match the entered keywords, enabling students to make informed choices easily.
+- **Interest-Based Keyword Search**: Students can input keywords reflecting their academic and personal interests to find matching courses.
+- **Faculty Filter**: Users can customize their search results to include or exclude specific faculties, focusing only on relevant options.
+- **Year Level Filtering**: The app ensures that users discover courses appropriate for their current academic year.
+- **Course Analytics**: Each course tab offers detailed analytics, including past grade distributions, enrollment statistics, and instructor ratings, providing a comprehensive view of course performance.
+- **Curated Course List**: SelectElect refines and organizes results to present a tailored list of courses, simplifying the decision-making process.
 
 ## Benefits
-- **Saves Time**: By automating and personalizing the course discovery process, students can find relevant electives faster.
-- **Enhanced Decision-Making**: With filters that align with individual academic pathways and course analytics for deeper insight, students can make better choices tailored to their goals.
-- **Improved User Experience**: SelectElect’s user-friendly interface streamlines course selection, making it simpler and more intuitive.
+- **Saves Time**: Automates and personalizes course discovery, enabling students to find relevant electives quickly.
+- **Enhanced Decision-Making**: Offers filters aligned with academic goals and detailed analytics for data-driven decisions.
+- **Personalized Recommendations**: Tailors elective choices to each student’s unique interests and academic requirements.
+- **Improved User Experience**: A user-friendly interface ensures a smooth and intuitive course selection process.
 
-SelectElect is your trusted companion for finding the right electives, empowering students to tailor their education according to their interests and academic requirements.
+Get started with SelectElect today and make your elective selection process effortless and insightful!
 
 ## How to Use
-1. Open a terminal and navigate to the folder that contains all the SelectElect files.
-2. Type `npm install` and press Enter.
-3. Type `npm start` and press Enter.
+Access the application from the following website: [SelectElect](https://selectelect.vercel.app/)
+
+Alternatively, use the application on your local machine by following these steps:
+
+1. Ensure that Node.js is installed on your machine. If not, download and install it from [Node.js Official Website](https://nodejs.org/).
+2. Open a terminal and navigate to the folder containing the SelectElect files.
+3. Type `npm install` and press Enter to install dependencies.
+4. Type `npm start` and press Enter to launch the application.
